@@ -710,6 +710,7 @@ li {
 a {
     text-decoration: none;
     line-height: inherit;
+    color: #000000;
 }
 
 a img {
@@ -4393,13 +4394,12 @@ h3{
 }
 
 .modal-popup__cat {
-    list-style: none;
     margin-left: 0;
     font-size: var(--text-sm);
     line-height: var(--vspace-0_5);
-    color: var(--color-text-light);
     padding-left: calc(0.875 * var(--space));
     position: relative;
+    color: #000000;
 }
 
 .modal-popup__cat::before {
@@ -4434,10 +4434,28 @@ h3{
     font-size: var(--text-sm);
     line-height: calc(var(--vspace-1_5) - 2px);
     border: 1px solid rgba(0, 0, 0, 0.15);
-    color: rgb(26, 24, 24);
     border-radius: var(--border-radius);
     padding: 0rem 1.4rem;
 
+}
+.modal-popup{
+    color: #000000;
+}
+.modal-popup p{
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: var(--border-radius);
+    line-height: calc(var(--vspace-1_5) - 2px);
+    color: #1a1818 !important;
+    padding: 0rem 1.4rem;
+    width: 150px;
+    text-align: center;
+    margin-top: -10px;
+}
+.modal-popup p:hover,
+.modal-popup p:focus{
+    border: 1px solid #00000026;
+    color: #000000;
+    background: #d5ecff;
 }
 
 .modal-popup__details .link {
@@ -5072,7 +5090,7 @@ h3{
 }
 
 .custom-cursor img {
-  width: 180px;  /* 이미지 크기 조절 */
+  width: 100px;  /* 이미지 크기 조절 */
   height: auto;
   margin-top: 50px;
 }
