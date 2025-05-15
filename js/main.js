@@ -3,6 +3,16 @@
  *
  * ------------------------------------------------------------------- */
 
+window.addEventListener("DOMContentLoaded", () => {
+      const greetings = [
+        "안녕하세요!😊 잘부탁드립니다!",
+        "어서오세요!👋 반갑습니다!",
+        "안녕하세요!😊 오늘도 좋은 하루 되세요 ☀️",
+      ];
+      const random = Math.floor(Math.random() * greetings.length);
+      alert(greetings[random]);
+    });
+
  document.addEventListener("DOMContentLoaded", () => {
     const cursor = document.querySelector(".custom-cursor");
     const clickEffect = document.querySelector(".cursor-click-effect");
