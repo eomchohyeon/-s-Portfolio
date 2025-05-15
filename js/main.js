@@ -3,19 +3,20 @@
  *
  * ------------------------------------------------------------------- */
 
-window.addEventListener("DOMContentLoaded", () => {
+    window.addEventListener("DOMContentLoaded", () => {
       const greetings = [
-        "안녕하세요!😊 잘부탁드립니다!",
-        "어서오세요!👋 반갑습니다!",
-        "안녕하세요!😊 오늘도 좋은 하루 되세요 ☀️",
+        "안녕하세요!😊 엄초현 포트폴리오입니다!"
       ];
       const random = Math.floor(Math.random() * greetings.length);
-      alert(greetings[random]);
-    });
+      const popup = document.getElementById("greetingPopup");
+      popup.textContent = greetings[random];
+      popup.classList.add("show");
 
- document.addEventListener("DOMContentLoaded", () => {
-    const cursor = document.querySelector(".custom-cursor");
-    const clickEffect = document.querySelector(".cursor-click-effect");
+      // 2.5초 뒤에 사라지기
+      setTimeout(() => {
+        popup.classList.remove("show");
+      }, 3000);
+    });
 
     // 마우스 따라다니기
     document.addEventListener("mousemove", (e) => {
@@ -36,7 +37,6 @@ window.addEventListener("DOMContentLoaded", () => {
         clickEffect.classList.remove("active");
       }, 300);
     });
-  });
 
 (function(html) {
 
