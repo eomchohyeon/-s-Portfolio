@@ -3,6 +3,31 @@
  *
  * ------------------------------------------------------------------- */
 
+ document.addEventListener("DOMContentLoaded", () => {
+    const cursor = document.querySelector(".custom-cursor");
+    const clickEffect = document.querySelector(".cursor-click-effect");
+
+    // 마우스 따라다니기
+    document.addEventListener("mousemove", (e) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      cursor.style.left = `${x}px`;
+      cursor.style.top = `${y}px`;
+
+      clickEffect.style.left = `${x}px`;
+      clickEffect.style.top = `${y}px`;
+    });
+
+    // 클릭 시 반짝임 효과
+    document.addEventListener("click", () => {
+      clickEffect.classList.add("active");
+
+      setTimeout(() => {
+        clickEffect.classList.remove("active");
+      }, 300);
+    });
+  });
+
 (function(html) {
 
     "use strict";
@@ -36,7 +61,6 @@
         // });
 
     }; // end ssPreloader
-
 
    /* Parallax
     * -------------------------------------------------- */
@@ -166,7 +190,27 @@
     }; // end ssScrollSpy
 
 
-   /* Swiper
+    // 조개
+document.addEventListener("DOMContentLoaded", () => {
+  const pearlContainer = document.getElementById("pearlContainer");
+
+  window.addEventListener("scroll", () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 100) {
+      pearlContainer.style.bottom = "40%";
+      pearlContainer.style.left = "50%";
+      pearlContainer.style.transform = "translateX(-50%) scale(2)";
+    } else {
+      pearlContainer.style.bottom = "100px";
+      pearlContainer.style.left = "unset";
+      pearlContainer.style.transform = "scale(1)";
+    }
+  });
+});
+//   조개끝
+
+   /* 
     * ------------------------------------------------------ */ 
     const ssSwiper = function() {
 
@@ -191,8 +235,7 @@
             }
          });
 
-    }; // end ssSwiper
-
+    }; // end 
 
    /* Lightbox
     * ------------------------------------------------------ */

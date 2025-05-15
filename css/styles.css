@@ -301,6 +301,7 @@ html {
 
 body {
     margin: 0;
+    cursor: none;
 }
 
 /* Render the `main` element consistently in IE. */
@@ -1697,6 +1698,7 @@ body {
     margin: 0;
     padding: 0;
 }
+
 
 /* ------------------------------------------------------------------- 
  * ## links
@@ -3974,75 +3976,131 @@ video {
 }
 
 
-/* ===================================================================
- * # about
- *
- * ------------------------------------------------------------------- */
-.s-about {
-    --color-border: var(--color-gray-16);
 
 
-    background-color: skyblue;
 
-    padding-top: 90px;
-    padding-bottom: var(--vspace-4);
-    color: rgba(14, 13, 13, 0.4);
+/* 조개 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.s-about img {}
-
-.s-about h3 {
-    margin-top: 0;
-    color: white;
+body, html {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+   min-height: 200vh; /* 또는 높이 확보용 클래스 .spacer 추가 */
 }
 
-.s-about__pic {
-    width: var(--vspace-5);
-    height: var(--vspace-5);
-    border: 1.6rem solid rgba(255, 255, 255, 0.02);
-    border-radius: 50%;
+/* 배경 영상 */
+#background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
 }
 
-.s-about__content-bottom {
-    margin-top: var(--vspace-2);
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: sans-serif;
 }
 
-.s-about__content-bottom a {
-    color: rgba(255, 255, 255, 0.4);
+.scene {
+  position: relative;
+  width: 100%;
+  height: 120vh;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
 }
 
-.s-about__content-bottom a:hover,
-.s-about__content-bottom a:focus {
-    color: white;
+
+.shell {
+  width: 800px;
+  z-index: 1;
+}
+/* 진주가 박스로 바뀌었을 때 스타일 */
+.pearl-container.white-box {
+  background-color: white;
+  border-radius: 10px;
+  width: 80%;
+  height: 30%;
+}
+/* Hover 시 진주 사라짐 */
+.pearl-container.white-box .pearl {
+  display: none;
 }
 
-.s-about__content-bottom .btn--download {
-    background-color: white;
-    border-color: white;
-    color: black;
-    margin-right: 0;
-    display: none;
+.pearl-container {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  transition: all 0.6s ease;
+  transform-origin: center center;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.s-about__content-bottom .btn--download svg {
-    height: 2rem;
-    width: 2rem;
-    vertical-align: middle;
-    margin-right: 1.2rem;
-    -webkit-transition: all 0.3s ease-in-out;
-    transition: all 0.3s ease-in-out;
+@keyframes sparkle {
+  0%, 100% {
+    filter: brightness(1);
+    transform: scale(1);
+  }
+  50% {
+    filter: brightness(1.1);
+    transform: scale(1.05);
+  }
 }
 
-.s-about__content-bottom .btn--download:hover,
-.s-about__content-bottom .btn--download:focus {
-    background-color: var(--color-2);
-    border-color: var(--color-2);
+@keyframes wave {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(5px); }
+  100% { transform: translateY(0px); }
 }
 
-.s-about__content-bottom .btn--download:hover svg path,
-.s-about__content-bottom .btn--download:focus svg path {
-    fill: white;
+.scene {
+  animation: wave 5s infinite ease-in-out;
 }
+
+
+.pearl {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.6s ease;
+  z-index: 3;
+  pointer-events: none;
+  animation: sparkle 2s infinite ease-in-out;
+  margin-left: -50px;
+  margin-top: 30px;
+}
+
+/* Hover 시 박스로 변신 */
+.pearl-container:hover {
+  width: 600px;
+  height: 300px;
+  background-image: url("../images/about.png"); /* 원하는 이미지 경로 */
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+}
+
+/* 진주가 사라지기만 (변형 ❌ 이동 ❌) */
+.pearl-container:hover .pearl {
+  opacity: 0;
+}
+
 
 /* ------------------------------------------------------------------- 
  * responsive:
@@ -4195,16 +4253,20 @@ video {
 
 .folio-item__thumb {
     display: block;
-    background-color: white;
     position: relative;
-    overflow: hidden;
+    z-index: 1;
+}
+h3{
+    color: #ffffff;
+    position: relative;
 }
 
+/* 포플 호버시 배경 */
 .folio-item__thumb::before {
     z-index: 1;
     content: "";
     display: block;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.5);
     opacity: 0;
     visibility: hidden;
     position: absolute;
@@ -4218,6 +4280,7 @@ video {
     transition: all, .5s;
 }
 
+/* 호버시 ...보임 */
 .folio-item__thumb::after {
     z-index: 1;
     content: "...";
@@ -4301,7 +4364,6 @@ video {
     padding: 0 4rem 1.2rem;
 }
 
-.modal-popup__desc p {}
 
 .mdp {
     margin: 30px 0;
@@ -4344,8 +4406,8 @@ video {
     display: none;
 }
 
+/* 사이트바로가기, 기획서 보기 등 글씨 */
 .modal-popup__details {
-    background-color: ;
     font-size: var(--text-sm);
     line-height: calc(var(--vspace-1_5) - 2px);
     border: 1px solid rgba(0, 0, 0, 0.15);
@@ -4638,12 +4700,13 @@ video {
 }
 
 .s-contact .section-header-allcaps {
-    color: rgb(2, 47, 77);
+    color: rgb(255, 255, 255);
     margin-bottom: var(--vspace-2_5);
 }
 
+/* 제에 대해 더 궁금한게 있으신가요? */
 .s-contact .huge-text {
-    color: rgb(0, 0, 0);
+    color: rgb(255, 255, 255);
     margin-top: 0;
     font-weight: 400;
     font-size: 4.6rem;
@@ -4660,26 +4723,28 @@ video {
 .contact-infos .btn {
     margin-top: var(--vspace-0_75);
 }
-
+/* 이메일 전화번호 */
 .contact-block {
-    font-size: 2.8rem;
+    font-size: 2.5rem;
     font-weight: 400;
     line-height: 1.286;
+    white-space: nowrap;
 }
 
 .contact-block a {
-    color: rgb(28, 71, 88);
+    color: rgb(255, 255, 255);
 }
 
+/* 호버했을때 */
 .contact-block a:hover,
 .contact-block a:focus {
-    color: var(--color-2);
+    color: #0e535f;
 }
 
 .contact-block__header {
     font-size: 2.2rem;
     font-weight: 400;
-    color: rgb(124, 175, 199);
+    color: rgb(136, 211, 221);
     margin-top: 0;
     margin-bottom: .2rem;
 }
@@ -4767,7 +4832,7 @@ video {
     padding-top: var(--vspace-1);
     border-top: 1px solid rgba(255, 255, 255, 0.03);
 }
-
+/* 아이콘 */
 .s-footer a {
     color: white;
 }
@@ -4967,4 +5032,44 @@ video {
     .s-footer__social li {
         margin-right: 1.4rem;
     }
+}
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 10000;
+  transform: translate(-50%, -50%);
+}
+
+.custom-cursor img {
+  width: 180px;  /* 이미지 크기 조절 */
+  height: auto;
+}
+.custom-cursor {
+  transition: transform 0.05s linear;
+}
+/* 클릭 반짝임 효과 */
+.cursor-click-effect {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(193, 253, 255, 0.7);
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%) scale(0);
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 클릭 시 활성화 스타일 */
+.cursor-click-effect.active {
+  transform: translate(-50%, -50%) scale(2.5);
+  opacity: 1;
+}
+/* 페이지 전체 기본 커서 숨김 */
+* {
+  cursor: none !important;
 }

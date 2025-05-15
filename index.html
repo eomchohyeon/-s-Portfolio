@@ -84,11 +84,19 @@
   </head>
 
   <body id="top" class="ss-preload">
+
+ 
     <!-- preloader
     ================================================== -->
     <div id="preloader">
       <div id="loader"></div>
     </div>
+
+    <!-- 커서 이미지 요소 -->
+    <div class="custom-cursor">
+      <img src="images/clown-fish-5567484.svg" alt="cursor" />
+    </div>
+    <div class="cursor-click-effect"></div>
 
     <!-- header
     ================================================== -->
@@ -120,7 +128,7 @@
 
     <!-- hero
     ================================================== -->
-    <video src="images/istockphoto-982811462-640_adpp_is.mp4" autoplay muted playsinline loop></video>
+    <video src="images/125218-732837306 (1).mp4" autoplay muted playsinline loop></video>
     <section id="hero" class="s-hero target-section">
       <div class="s-hero__bg rellax" data-rellax-speed="-7"></div>
       <div class="row s-hero__content">
@@ -128,7 +136,7 @@
           <div class="s-hero__content-about">
             <h1 class="dancing">portfolio</h1>
             <h3>
-              Designer <a class="smoothscroll" href="#about">EOM-CHOHYEON</a>
+              Designer <a class="smoothscroll" href="#about">EOMCHOHYEON</a>
             </h3>
 
             <div class="s-hero__content-social">
@@ -169,16 +177,28 @@
 
     <!-- about
     ================================================== -->
-    <section id="about" class="s-about target-section">
+    <!-- <section id="about" class="s-about target-section">
       <div class="row">
         <div class="column large-12 tab-12">
           <img src="images/about.png" />
         </div>
-      </div>
+      </div> -->
       <!-- end row -->
-    </section>
+    <!-- </section> -->
     <!-- end s-about -->
+  <div class="scene">
+    <img src="images/shell.png" class="shell" id="shell" />  
+    <div class="bubble-wrapper" aria-hidden="true"></div>
+    <div class="pearl-container" id="pearlContainer">
+      <img src="images/진주.png" class="pearl" id="pearl" />
+    </div>
+  
+  </div>
 
+  <!-- 스크롤 유도용 영역 -->
+  <div class="spacer"></div>
+
+  <script src="main.js"></script>
     <!-- portfolio
     ================================================== -->
     <section id="portfolio" class="s-portfolio target-section">
@@ -664,7 +684,7 @@
 
         <div class="column large-7 medium-6 w-1000-stack ss-copyright">
           <span> </span>
-          <span>thank you for watching </span>
+          <span>Thank you for reviewing my portfolio</span>
         </div>
       </div>
 
