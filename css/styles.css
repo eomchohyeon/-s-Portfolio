@@ -4100,7 +4100,7 @@ body, html {
 }
 .mouseover {
   position: absolute;
-  top: 105%;
+  top: 98%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 4; /* 진주보다 위에 */
@@ -4109,6 +4109,12 @@ body, html {
   transition: opacity 0.2s ease;
   animation: float 2s ease-in-out infinite;
 }
+.tx-t{
+    font-weight: bold;
+    font-size: 17px;
+    margin-top: 20px;
+    color: #2f5c68;
+}
 
 .mouseover img {
   width: 12px;
@@ -4116,7 +4122,6 @@ body, html {
   opacity: 0.9;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
   animation: bounce 1.5s infinite;
-  margin-top: 30px;
 }
 
 .mouseover p {
