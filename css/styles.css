@@ -3704,14 +3704,10 @@ video {
   margin: 0;
   padding: 0;
   display: block;
+  padding-top: 50px;
 }
 
-.nemo-gif {
-  width: 150px;
-  margin: 0;
-  padding: 0;
-  display: block;
-}
+
 .title-group {
   display: flex;
   flex-direction: column;
@@ -4057,7 +4053,6 @@ body, html {
   justify-content: center;
 }
 
-
 .shell {
   width: 800px;
   z-index: 1;
@@ -4102,6 +4097,32 @@ body, html {
   50% { transform: translateY(5px); }
   100% { transform: translateY(0px); }
 }
+.mouseover {
+  position: absolute;
+  top: 105%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4; /* 진주보다 위에 */
+  text-align: center;
+  pointer-events: none; /* 마우스 이벤트 방해 방지 */
+  transition: opacity 0.2s ease;
+  animation: float 2s ease-in-out infinite;
+}
+
+.mouseover img {
+  width: 12px;
+  height: auto; 
+  opacity: 0.9;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+  animation: bounce 1.5s infinite;
+  margin-top: 30px;
+}
+
+.mouseover p {
+  color: black;
+  font-size: 5px;
+  margin-top: -50px;
+}
 
 .scene {
   animation: wave 5s infinite ease-in-out;
@@ -4133,10 +4154,10 @@ body, html {
 
 
 /* 진주가 사라지기만 (변형 ❌ 이동 ❌) */
-.pearl-container:hover .pearl {
+.pearl-container:hover .pearl,
+.pearl-container:hover .mouseover {
   opacity: 0;
 }
-
 
 /* ------------------------------------------------------------------- 
  * responsive:
