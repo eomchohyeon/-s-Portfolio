@@ -5091,7 +5091,7 @@ h3{
 }
 
 .custom-cursor img {
-  width: 80px;  /* 이미지 크기 조절 */
+  width: 60px;  /* 이미지 크기 조절 */
   height: auto;
   margin-top: 50px;
 }
