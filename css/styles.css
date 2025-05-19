@@ -4051,6 +4051,7 @@ body, html {
   display: flex;
   align-items: flex-end;
   justify-content: center;
+  margin-top: -150px;
 }
 
 .shell {
@@ -4808,7 +4809,7 @@ h3{
 .contact-block__header {
     font-size: 2.2rem;
     font-weight: 400;
-    color: #073b42;
+    color: #ffffff;
     margin-top: 0;
     margin-bottom: .2rem;
 }
