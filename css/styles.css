@@ -2553,6 +2553,19 @@ button.btn--pill {
     border-radius: 1000px !important;
 }
 
+button{
+    height: 48px;
+    font-size: var(--text-sm);
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: var(--border-radius);
+    padding: 0rem 1.4rem;
+    letter-spacing: normal;
+    line-height: 12px;
+}
+button:hover
+button:focus{
+    background: #d5ecff;
+}
 
 /* =================================================================== 
  * # additional components
@@ -4109,7 +4122,6 @@ body, html {
   margin-left: -50px;
   margin-top: 30px;
 }
-
 /* Hover 시 박스로 변신 */
 .pearl-container:hover {
   width: 600px;
@@ -4117,8 +4129,8 @@ body, html {
   background-image: url("../images/about.png"); /* 원하는 이미지 경로 */
   background-size: cover;
   background-position: center;
-  border-radius: 10px;
 }
+
 
 /* 진주가 사라지기만 (변형 ❌ 이동 ❌) */
 .pearl-container:hover .pearl {
@@ -4436,25 +4448,14 @@ h3{
     border: 1px solid rgba(0, 0, 0, 0.15);
     border-radius: var(--border-radius);
     padding: 0rem 1.4rem;
-
+    color: #000000;
 }
 .modal-popup{
     color: #000000;
+
 }
-.modal-popup p{
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    border-radius: var(--border-radius);
-    line-height: calc(var(--vspace-1_5) - 2px);
-    color: #1a1818 !important;
-    padding: 0rem 1.4rem;
-    width: 150px;
-    text-align: center;
-    margin-top: -10px;
-}
-.modal-popup p:hover,
-.modal-popup p:focus{
-    border: 1px solid #00000026;
-    color: #000000;
+.modal-popup__details:hover,
+.modal-popup__details:focus{
     background: #d5ecff;
 }
 
