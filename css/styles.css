@@ -5101,7 +5101,6 @@ h3{
         margin-right: 1.4rem;
     }
 }
-
 .custom-cursor {
   position: fixed;
   top: 0;
@@ -5109,23 +5108,25 @@ h3{
   pointer-events: none;
   z-index: 10000;
   transform: translate(-50%, -50%);
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgba(193, 253, 255, 0.7);
+  pointer-events: none;
+  z-index: 9999;
 }
 
-.custom-cursor img {
-  width: 60px;  /* 이미지 크기 조절 */
-  height: auto;
-  margin-top: 50px;
-}
 .custom-cursor {
   transition: transform 0.05s linear;
 }
 /* 클릭 반짝임 효과 */
 .cursor-click-effect {
   position: fixed;
-  width: 30px;
-  height: 30px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: rgba(193, 253, 255, 0.7);
+  background: rgba(193, 253, 255, 0.3);
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%) scale(0);
@@ -5168,3 +5169,5 @@ h3{
       pointer-events: auto;
       top: 60px;
     }
+
+    
