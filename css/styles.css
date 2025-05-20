@@ -109,12 +109,12 @@
 
     /* theme color variations
      */
-    --color-1-lighter: hsla(182, 82%, 58%, 1);
-    --color-1-light: hsla(182, 82%, 48%, 1);
+    --color-1-lighter: rgb(44, 140, 143);
+    --color-1-light: rgb(20, 129, 133);
     --color-1-dark: hsla(182, 82%, 28%, 1);
     --color-1-darker: hsla(182, 82%, 18%, 1);
     --color-2-lighter: rgb(11, 64, 107);
-    --color-2-light: rgb(36, 229, 255);
+    --color-2-light: rgb(17, 127, 141);
 
     /* feedback colors
      * color-error(#ffd1d2), color-success(#c8e675), 
@@ -138,9 +138,6 @@
     --color-black: #576d86;
     /* 메뉴 배경 */
     --color-gray-19: #588799;
-    /* 푸터 배경 */
-    --color-gray-18: #648da8;
-    --color-gray-1: #ffffff;
 
     /* text
      */
@@ -3443,7 +3440,7 @@ button:focus{
 }
 
 /* ------------------------------------------------------------------- 
- * ## mobile menu toggle 
+ * ## mobile menu toggle 햄버거
  * ------------------------------------------------------------------- */
 .s-header__menu-toggle {
     display: none;
@@ -3451,7 +3448,7 @@ button:focus{
     font-size: 1.3rem;
     text-transform: uppercase;
     letter-spacing: .4rem;
-    background-color: var(--color-2);
+    background-color: #33a7bb;
     color: white;
     width: var(--header-height);
     height: var(--header-height);
@@ -3533,10 +3530,10 @@ button:focus{
         width: 100%;
         padding: 0;
     }
-
+/* 반응형 햄버거 메뉴 bg  */
     .s-header__nav-wrap,
     .s-header__nav {
-        background-color: #050505;
+        background-color: #33a7bb;
     }
 
     .s-header__nav-wrap {
@@ -3567,12 +3564,11 @@ button:focus{
         display: block;
         text-align: left;
         margin: 0 0 var(--vspace-1_75) 0;
-        border-top: 1px dotted rgba(255, 255, 255, 0.06);
     }
 
     .s-header__nav ul li {
         display: block;
-        border-bottom: 1px dotted rgba(255, 255, 255, 0.06);
+        border-bottom: 1px dotted rgba(255, 255, 255);
         position: relative;
     }
 
@@ -3587,7 +3583,7 @@ button:focus{
         content: counter(ctr, decimal-leading-zero);
         counter-increment: ctr;
         font-size: var(--text-xs);
-        color: rgba(255, 255, 255, 0.18);
+        color: rgba(255, 255, 255);
         position: absolute;
         top: var(--vspace-0_5);
         left: 0;
@@ -4763,7 +4759,7 @@ h3{
  * ------------------------------------------------------------------- */
 .s-contact {
     position: relative;
-    z-index: 999;
+    z-index: 1;
     padding-top: calc(6 * var(--space));
     padding-bottom: var(--vspace-3_5);
 }
@@ -5007,7 +5003,7 @@ h3{
     height: 6.4rem;
     width: 6.4rem;
     border-radius: 50%;
-    background-color: #077996;
+    background-color: #33a7bb;
     -webkit-transition: all .3s;
     transition: all .3s;
     position: relative;
@@ -5015,7 +5011,7 @@ h3{
 
 .ss-go-top a:hover,
 .ss-go-top a:focus {
-    background: #77cde2;;
+    background: rgba(51, 167, 187, 0.5);
 }
 
 .ss-go-top svg {
