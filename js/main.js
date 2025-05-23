@@ -18,6 +18,16 @@
       }, 3000);
     });
 
+
+// 자기소개 영상
+  document.getElementById('videoTrigger').addEventListener('click', function (e) {
+    e.preventDefault();
+    const videoContainer = document.getElementById('videoContainer');
+    videoContainer.classList.toggle('hidden');
+  });
+
+  
+
     // 마우스 따라다니기
     document.addEventListener("mousemove", (e) => {
       const x = e.clientX;
